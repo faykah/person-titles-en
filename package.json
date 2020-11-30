@@ -35,7 +35,7 @@
   },
   "scripts": {
     "build": "./node_modules/rollup/dist/bin/rollup -c && ./node_modules/typescript/bin/tsc --declaration --emitDeclarationOnly --declarationDir lib",
-    "test": "./node_modules/mocha/bin/mocha --require ts-node/register tests/**/*.ts"
+    "test": "env TS_NODE_PROJECT=\"tsconfig.test.json\" ./node_modules/mocha/bin/mocha --require ts-node/register tests/**/*.ts"
   },
   "files": [
 	  "lib/index.browser.js",

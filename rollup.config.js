@@ -15,12 +15,12 @@ export default {
     },
     {
       format: "iife",
-      name: "Faykah",
+      name: "Faykah.personTitles",
       file: "lib/index.browser.js",
     },
     {
       format: "iife",
-      name: "Faykah",
+      name: "Faykah.personTitles",
       file: "lib/index.browser.min.js",
       plugins: [terser()],
     },

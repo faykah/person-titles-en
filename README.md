@@ -75,14 +75,17 @@ Browser
 ```html
 <body>
 	<script type="text/javascript" src="https://unpkg.com/@faykah/core@0.1.0/lib/index.browser.min.js" defer></script>
-	<script type="text/javascript" src="https://unpkg.com/@faykah/person-titles-en@0.1.0/lib/index.browser.min.js" defer></script>
+	<script type="text/javascript" src="https://unpkg.com/@faykah/person-titles-en@0.1.1/lib/index.browser.min.js" defer></script>
 
 	<script type="text/javascript" defer>
-		const generateLastName = Faykah.createGenerator(Faykah.personTitles);
+		const { createGenerator } = Faykah;
+		const { personTitles } = Faykah.personTitles;
 
-		generatePersonTitle(); // "Mrs"
-		generatePersonTitle(); // "Dr"
-		generatePersonTitle(); // "Mr"
+		const generateTitle = createGenerator(personTitles);
+
+		console.log(generateTitle());
+		console.log(generateTitle());
+		console.log(generateTitle());
 	</script>
 </body>
 ```
@@ -116,10 +119,12 @@ Browser
 ```html
 <body>
 	<script type="text/javascript" src="https://unpkg.com/@faykah/core@0.1.0/lib/index.browser.min.js" defer></script>
-	<script type="text/javascript" src="https://unpkg.com/@faykah/person-titles-en@0.1.0/lib/index.browser.min.js" defer></script>
+	<script type="text/javascript" src="https://unpkg.com/@faykah/person-titles-en@0.1.1/lib/index.browser.min.js" defer></script>
 
 	<script type="text/javascript" defer>
-		for (const personTitle of Faykah.personTitles) {
+		const { personTitles } = Faykah.personTitles;
+
+		for (const personTitle of personTitles) {
 			console.log(personTitle);
 		}
 	</script>
